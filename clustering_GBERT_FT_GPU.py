@@ -1,15 +1,44 @@
-import pandas as pd
-import numpy as np
-import tensorflow as tf
-from transformers import BertTokenizer, TFBertForMaskedLM, BertConfig
-from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
-from sklearn.decomposition import PCA
-import matplotlib.pyplot as plt
+# Standard library imports
 import os
-import wandb  # Import WandB
-from keras.src.callbacks import EarlyStopping, ModelCheckpoint
+from typing import List, Dict, Optional
+
+# Third-party imports: Data processing and analysis
+import numpy as np
+import pandas as pd
+
+# Third-party imports: Machine Learning & Deep Learning
+import tensorflow as tf
+from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
+from sklearn.metrics import (
+    silhouette_score,
+    davies_bouldin_score, 
+    calinski_harabasz_score
+)
+
+# Third-party imports: Transformers
+from transformers import (
+    BertTokenizer, 
+    TFBertForMaskedLM, 
+    BertConfig
+)
+
+# Third-party imports: Visualization
+import matplotlib.pyplot as plt
+from kneed import KneeLocator
+
+# Third-party imports: Deep Learning tools
+import wandb
+from tensorflow.keras.callbacks import (
+    EarlyStopping, 
+    ModelCheckpoint, 
+    ReduceLROnPlateau
+)
 from wandb.integration.keras import WandbMetricsLogger
+
+# Optional visualization imports (uncomment if using UMAP/t-SNE)
+# import umap
+# from sklearn.manifold import TSNE
 
 SEED = 42
 EPOCHS = 100
@@ -54,10 +83,12 @@ for i in range(len(labels)):
 # Create a TensorFlow dataset
 dataset = tf.data.Dataset.from_tensor_slices((inputs, labels)).batch(8)
 
-# Compile and train the model
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=5e-5))
-
-# Define callbacks for early stopping and model checkpointing
+# Add gradient clipping to prevent exploding gradients
+model.compile(
+    optimizer=tf.keras.optimizers.Adam(learning_rate=5e-5, clipnorm=1.0),
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+)
+# Define callbacks for early stopping and model checkpointing and learing rate scheduling
 # Callbacks
 
 cb_autosave = ModelCheckpoint("best_GBERT_FT.h5",
@@ -70,6 +101,11 @@ cb_early_stop = EarlyStopping(patience=10,
                               verbose=1,
                               mode="auto",
                               monitor="loss")
+
+lr_scheduler =  ReduceLROnPlateau(monitor='loss',
+                                  factor=0.5,
+                                  patience=3,
+                                  min_lr=1e-6)
 
 # start a new wandb run to track this script
 wandb.init(
@@ -116,40 +152,117 @@ def generate_embeddings(comments):
 print("Generating embeddings using the fine-tuned model...")
 embeddings = generate_embeddings(comments)
 
-# Step 9: Perform K-Means clustering
-num_clusters = 7
-kmeans = KMeans(n_clusters=num_clusters, random_state=SEED)
-labels = kmeans.fit_predict(embeddings)
+# Step 9: Determine optimal number of clusters using elbow method
+def find_optimal_clusters(embeddings, max_clusters=15):
+    inertias = []
+    silhouette_scores = []
+    k_range = range(2, max_clusters + 1)
+    
+    for k in k_range:
+        kmeans = KMeans(n_clusters=k, random_state=SEED)
+        kmeans.fit(embeddings)
+        inertias.append(kmeans.inertia_)
+        silhouette_scores.append(silhouette_score(embeddings, kmeans.labels_))
+        
+    # Find elbow point
+    kn = KneeLocator(k_range, inertias, curve='convex', direction='decreasing')
+    optimal_k = kn.elbow
+    
+    # Plot elbow curve
+    plt.figure(figsize=(10, 6))
+    plt.plot(k_range, inertias, 'bx-')
+    plt.xlabel('k')
+    plt.ylabel('Inertia')
+    plt.title('Elbow Method For Optimal k')
+    plt.savefig('plots/elbow_curve.png')
+    plt.close()
+    
+    return optimal_k
+
+optimal_k = find_optimal_clusters(embeddings)
+print(f"Optimal number of clusters: {optimal_k}")
+
 
 # Step 10: Add cluster labels to the original dataset
+
+kmeans = KMeans(n_clusters=optimal_k, random_state=42)
+labels = kmeans.fit_predict(embeddings)
+# Now assign these labels to your dataframe
 data["Cluster"] = labels
+
 
 # Step 11: Save the clustered data
 output_path = "dataset/clustered_comments_fine_tuned_gbert.csv"
 data.to_csv(output_path, index=False)
 print(f"\nClustered data saved to {output_path}")
 
-# Step 12: Calculate silhouette score
+# Step 12: Calculate metrics
+print("\nCalculating metrics...")
 silhouette_avg = silhouette_score(embeddings, labels)
-print(f"\nSilhouette Score: {silhouette_avg:.2f}")
+db_score = davies_bouldin_score(embeddings, labels)
+ch_score = calinski_harabasz_score(embeddings, labels)
 
-# Step 13: Visualize clusters using PCA
-print("\nVisualizing clusters with PCA...")
-pca = PCA(n_components=2)
-reduced_embeddings = pca.fit_transform(embeddings)
+print(f"\nSilhouette Score: {silhouette_avg:.2f}")
+print(f"Davies-Bouldin Score: {db_score:.2f}")
+print(f"Calinski-Harabasz Score: {ch_score:.2f}")
+
+
+# Step 13: Visualize clusters 
+# Add UMAP visualization (better for high-dimensional data than PCA)
+import umap
+
+def visualize_clusters(embeddings, labels, method='both'):
+    if method in ['umap', 'both']:
+        # UMAP visualization
+        reducer = umap.UMAP(random_state=SEED)
+        umap_embeddings = reducer.fit_transform(embeddings)
+        
+        plt.figure(figsize=(10, 6))
+        scatter = plt.scatter(umap_embeddings[:, 0], umap_embeddings[:, 1], 
+                            c=labels, cmap="viridis", s=50)
+        plt.colorbar(scatter, label="Cluster")
+        plt.title("UMAP Visualization of Text Clusters")
+        plt.xlabel("UMAP Component 1")
+        plt.ylabel("UMAP Component 2")
+        plt.savefig("plots/umap_clusters.png", dpi=300, bbox_inches="tight")
+        plt.close()
+
+    if method in ['tsne', 'both']:
+        # t-SNE visualization
+        from sklearn.manifold import TSNE
+        tsne = TSNE(n_components=2, random_state=SEED)
+        tsne_embeddings = tsne.fit_transform(embeddings)
+        
+        plt.figure(figsize=(10, 6))
+        scatter = plt.scatter(tsne_embeddings[:, 0], tsne_embeddings[:, 1], 
+                            c=labels, cmap="viridis", s=50)
+        plt.colorbar(scatter, label="Cluster")
+        plt.title("t-SNE Visualization of Text Clusters")
+        plt.xlabel("t-SNE Component 1")
+        plt.ylabel("t-SNE Component 2")
+        plt.savefig("plots/tsne_clusters.png", dpi=300, bbox_inches="tight")
+        plt.close()
+
+visualize_clusters(embeddings, labels, method='both')
+
 
 # Create plots folder if it doesn't exist
 plots_folder = "plots"
 os.makedirs(plots_folder, exist_ok=True)
 
-# Generate PCA plot
-plt.figure(figsize=(10, 6))
-scatter = plt.scatter(reduced_embeddings[:, 0], reduced_embeddings[:, 1], c=labels, cmap="viridis", s=50)
-plt.colorbar(scatter, label="Cluster")
-plt.title("PCA Visualization of Text Clusters (Fine-tuned GBERT)")
-plt.xlabel("PCA Component 1")
-plt.ylabel("PCA Component 2")
-plt.savefig(os.path.join(plots_folder, "pca_clusters_fine_tuned_gbert.png"), dpi=300, bbox_inches="tight")
-plt.close()
+# Add cluster analysis
+def analyze_clusters(data, labels):
+    for i in range(max(labels) + 1):
+        cluster_texts = data[data['Cluster'] == i]['Kommentar'].tolist()
+        print(f"\nCluster {i} ({len(cluster_texts)} comments):")
+        # Print a few example comments from each cluster
+        print("Sample comments:")
+        for text in cluster_texts[:3]:
+            print(f"- {text[:100]}...")
+        
+        # Calculate average comment length per cluster
+        avg_length = sum(len(text.split()) for text in cluster_texts) / len(cluster_texts)
+        print(f"Average comment length: {avg_length:.1f} words")
+        
 
-print("PCA plot saved.")
+analyze_clusters(data, labels)

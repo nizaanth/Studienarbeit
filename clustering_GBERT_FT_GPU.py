@@ -8,6 +8,9 @@ import pandas as pd
 
 # Third-party imports: Machine Learning & Deep Learning
 import tensorflow as tf
+import tf_keras
+from tf_keras.optimizers import Adam  # for example
+
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 from sklearn.metrics import (
@@ -29,7 +32,7 @@ from kneed import KneeLocator
 
 # Third-party imports: Deep Learning tools
 import wandb
-from tensorflow.keras.callbacks import (
+from keras.src.callbacks import (
     EarlyStopping, 
     ModelCheckpoint, 
     ReduceLROnPlateau
@@ -41,7 +44,7 @@ from wandb.integration.keras import WandbMetricsLogger
 # from sklearn.manifold import TSNE
 
 SEED = 42
-EPOCHS = 100
+EPOCHS = 20
 WANDB_KEY = '45d0f1022dabf560fcb7388b00ee3b6a378d54a8'
 wandb.login(key=WANDB_KEY)
 
@@ -85,27 +88,27 @@ dataset = tf.data.Dataset.from_tensor_slices((inputs, labels)).batch(8)
 
 # Add gradient clipping to prevent exploding gradients
 model.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=5e-5, clipnorm=1.0),
+    optimizer= Adam(learning_rate=5e-5, clipnorm=1.0),
     loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
 )
 # Define callbacks for early stopping and model checkpointing and learing rate scheduling
 # Callbacks
 
-cb_autosave = ModelCheckpoint("best_GBERT_FT.h5",
-                              mode="max",
-                              save_best_only=True,
-                              monitor="loss",
-                              verbose=1)
+# cb_autosave = ModelCheckpoint("best_GBERT_FT.h5",
+#                               mode="min",
+#                               save_best_only=True,
+#                               monitor="loss",
+#                               verbose=1)
 
-cb_early_stop = EarlyStopping(patience=10,
-                              verbose=1,
-                              mode="auto",
-                              monitor="loss")
+# cb_early_stop = EarlyStopping(patience=10,
+#                               verbose=1,
+#                               mode="auto",
+#                               monitor="loss")
 
-lr_scheduler =  ReduceLROnPlateau(monitor='loss',
-                                  factor=0.5,
-                                  patience=3,
-                                  min_lr=1e-6)
+# lr_scheduler =  ReduceLROnPlateau(monitor='loss',
+#                                   factor=0.5,
+#                                   patience=3,
+#                                   min_lr=1e-6)
 
 # start a new wandb run to track this script
 wandb.init(
@@ -120,12 +123,12 @@ wandb.init(
     }
 )
 
-cb_wandb = WandbMetricsLogger()
+#cb_wandb = WandbMetricsLogger()
 
-callbacks = [cb_autosave, cb_early_stop, cb_wandb]
+#callbacks = [cb_autosave, cb_early_stop, cb_wandb]
 
 # Fine-tune the model with additional callbacks
-model.fit(dataset, epochs=EPOCHS, callbacks=callbacks)
+model.fit(dataset, epochs=EPOCHS)
 
 # Finish the WandB run
 wandb.finish()
@@ -185,7 +188,7 @@ print(f"Optimal number of clusters: {optimal_k}")
 
 # Step 10: Add cluster labels to the original dataset
 
-kmeans = KMeans(n_clusters=optimal_k, random_state=42)
+kmeans = KMeans(n_clusters=optimal_k, random_state=SEED)
 labels = kmeans.fit_predict(embeddings)
 # Now assign these labels to your dataframe
 data["Cluster"] = labels

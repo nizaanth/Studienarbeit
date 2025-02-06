@@ -1,0 +1,4 @@
+Topic,Count,Name,Representation,Representative_Docs
+-1,24,-1_effizienz_maschine_wurde_positiv,"['effizienz', 'maschine', 'wurde', 'positiv', 'rückmeldungen', 'anpassungen', 'schicht', 'update']","['unerwarteter Rückgang Effizienz wurde festgestellt', 'Anpassungen Effizienz verbessert', 'hohes Maß Effizienz wurde Schicht beobachtet']"
+0,57,0_produktion_maschine_aufgrund_umstellung,"['produktion', 'maschine', 'aufgrund', 'umstellung', 'zeigte', 'gab', 'jedoch', 'verlief']","['Produktion aufgrund Defekts gestoppt', 'Maschine arbeitete effizient gab jedoch Fehlermeldungen', 'Maschine zeigte unerwartete Störungen Betrieb beeinträchtigten']"
+1,19,1_qualität_hoch_teile_ausschuss,"['qualität', 'hoch', 'teile', 'ausschuss', 'minimal', 'produzierten', 'überdurchschnittlich', 'maschinenleistung']","['Qualität Teile Allgemeinen hoch', 'Ausschuss minimal Qualität hoch', 'Qualität produzierten Teile überdurchschnittlich hoch']"

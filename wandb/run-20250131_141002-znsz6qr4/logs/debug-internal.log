@@ -1,0 +1,15 @@
+{"time":"2025-01-31T14:10:03.4089439+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.4","symlink path":"C:\\Users\\Lenovo\\Documents\\Semester_5\\Studienarbeit\\wandb\\run-20250131_141002-znsz6qr4\\logs\\debug-core.log"}
+{"time":"2025-01-31T14:10:03.8461201+01:00","level":"INFO","msg":"created new stream","id":"znsz6qr4"}
+{"time":"2025-01-31T14:10:03.8489306+01:00","level":"INFO","msg":"stream: started","id":"znsz6qr4"}
+{"time":"2025-01-31T14:10:03.8483863+01:00","level":"INFO","msg":"handler: started","stream_id":"znsz6qr4"}
+{"time":"2025-01-31T14:10:03.849554+01:00","level":"INFO","msg":"sender: started","stream_id":"znsz6qr4"}
+{"time":"2025-01-31T14:10:03.849554+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"znsz6qr4"}
+{"time":"2025-01-31T14:10:04.336144+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-31T14:10:04.9040827+01:00","level":"INFO","msg":"stream: closing","id":"znsz6qr4"}
+{"time":"2025-01-31T14:10:04.9040827+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-31T14:10:04.9050818+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-31T14:10:05.9579914+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-31T14:10:06.3432087+01:00","level":"INFO","msg":"handler: closed","stream_id":"znsz6qr4"}
+{"time":"2025-01-31T14:10:06.3440431+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"znsz6qr4"}
+{"time":"2025-01-31T14:10:06.3445595+01:00","level":"INFO","msg":"sender: closed","stream_id":"znsz6qr4"}
+{"time":"2025-01-31T14:10:06.3450907+01:00","level":"INFO","msg":"stream: closed","id":"znsz6qr4"}

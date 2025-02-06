@@ -1,0 +1,31 @@
+{
+  "os": "Windows-10-10.0.19045-SP0",
+  "python": "CPython 3.11.1",
+  "startedAt": "2025-01-31T13:13:12.240235Z",
+  "program": "c:\\Users\\Lenovo\\Documents\\Semester_5\\Studienarbeit\\clustering_GBERT_FT_GPU.py",
+  "codePath": "clustering_GBERT_FT_GPU.py",
+  "git": {
+    "remote": "https://github.com/nizaanth/Studienarbeit.git",
+    "commit": "4b70bb5361b4433272a686fbce3c870393a73928"
+  },
+  "email": "nizaanthdl@gmail.com",
+  "root": "C:\\Users\\Lenovo\\Documents\\Semester_5\\Studienarbeit",
+  "host": "DESKTOP-DFND7D0",
+  "executable": "C:\\Users\\Lenovo\\Documents\\Semester_5\\Studienarbeit\\my_venv\\Scripts\\python.exe",
+  "codePathLocal": "clustering_GBERT_FT_GPU.py",
+  "cpu_count": 2,
+  "cpu_count_logical": 4,
+  "disk": {
+    "/": {
+      "total": "511503421440",
+      "used": "437516460032"
+    }
+  },
+  "memory": {
+    "total": "25395785728"
+  },
+  "cpu": {
+    "count": 2,
+    "countLogical": 4
+  }
+}

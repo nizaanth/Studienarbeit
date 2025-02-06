@@ -1,0 +1,101 @@
+Schicht,Maschinen-ID,Produktionslinie,Betreiber,Kommentar,Cluster,Topic,Keywords
+Schicht1,M01,Linie1,Lisa Fischer,"Die Maschine arbeitete optimal, alle Parameter waren im grünen Bereich.",3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M02,Linie2,Tobias Schulz,"Häufige Kalibrierungen waren notwendig, was die Effizienz reduzierte.",4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M03,Linie3,Anna Braun,Die Qualität der produzierten Teile war überdurchschnittlich hoch.,0,1,1_qualität_hoch_teile_ausschuss
+Schicht2,M04,Linie1,Frank Bauer,Ein unerwarteter Stillstand aufgrund eines Softwarefehlers trat auf.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M05,Linie2,Emma Weber,"Die Maschinen liefen stabil, jedoch gab es einen erhöhten Materialverbrauch.",3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M06,Linie3,Karl Wagner,Die Produktion musste aufgrund eines Defekts gestoppt werden.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M07,Linie1,Laura Klein,"Positive Rückmeldungen zur Qualität, alles verlief reibungslos.",3,-1,-1_effizienz_maschine_wurde_positiv
+Schicht3,M08,Linie2,Maximilian Wagner,Die Umstellung auf den neuen Produktionsprozess war ein Erfolg.,4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M09,Linie3,Noah Becker,Ein Elektroschaden hat die Produktion zeitweise gestört.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M10,Linie1,Lucas Klein,Die Maschine zeigte mehr Vibrationen als gewöhnlich.,3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M11,Linie2,Lukas Müller,Ein Materialmangel führte zu einem Rückstau in der Produktion.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M12,Linie3,Sarah Krause,"Kurze Unterbrechungen waren vom System verursacht, insgesamt jedoch stabil.",1,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M13,Linie1,Clara Wagner,Die Fertigung lief über die gesamte Schicht hinweg ohne Probleme.,3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M14,Linie2,Leon Huber,Ein schneller Software-Update hat die Maschinenleistung verbessert.,2,-1,-1_effizienz_maschine_wurde_positiv
+Schicht2,M15,Linie3,Julia Lehmann,"Der Ausschuss war hoch, vermutlich aufgrund von Materialfehlern.",2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M16,Linie1,Karl Wagner,"Effizienter Betrieb während der gesamten Schicht, keine nennenswerten Vorfälle.",4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M17,Linie2,Tobias Schulz,Die Produktionsqualität hat sich trotz höherem Ausschuss stabil gehalten.,0,1,1_qualität_hoch_teile_ausschuss
+Schicht3,M18,Linie3,Sophie Neumann,Durch eine technische Störung gab es eine Verzögerung beim Produktionsstart.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M19,Linie1,Paul Becker,Die Reinigungsprozesse waren umfangreicher als gewöhnlich.,4,-1,-1_effizienz_maschine_wurde_positiv
+Schicht1,M20,Linie2,Anna Schmidt,Stabiler Arbeitsablauf mit minimalen Abweichungen in der Produktion.,4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M21,Linie3,Max Müller,Der Maschinenpark sollte aufgrund des Alters bald modernisiert werden.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M22,Linie1,Julius Klein,Die Umstellungen der Maschinenparameter verliefen erfolgreich.,3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M23,Linie2,Maria Müller,"Ein Anstieg der Produzierbarkeit wurde festgestellt, sehr positiv.",1,-1,-1_effizienz_maschine_wurde_positiv
+Schicht2,M24,Linie3,Lisa Huber,"Regelmäßige Wartung hat dazu beigetragen, Störungen zu minimieren.",4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M25,Linie1,Frank Bauer,Ein unerwarteter Materialmangel hat die Produktion beeinträchtigt.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M26,Linie2,Emma Fischer,"Der Ausschuss war extrem niedrig, eine hervorragende Leistung.",5,1,1_qualität_hoch_teile_ausschuss
+Schicht3,M27,Linie3,Clara Welke,"Die Maschine benötigte zusätzliche Kalibrierungen, was Zeit in Anspruch nahm.",3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M28,Linie1,Sophie Huber,"Technische Details sollten besser dokumentiert werden, um zukünftige Probleme zu vermeiden.",4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M29,Linie2,Lukas Meyer,Unregelmäßigkeiten bei der Maschinentechnik erforderten sofortige Aufmerksamkeit.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M30,Linie3,Sarah Müller,Die gesamte Produktionslinie war effizient und gut koordiniert.,5,-1,-1_effizienz_maschine_wurde_positiv
+Schicht2,M31,Linie1,Noah Becker,Die Qualität der gefertigten Teile war insgesamt sehr gut.,0,1,1_qualität_hoch_teile_ausschuss
+Schicht2,M32,Linie2,Lisa Neumann,Die Umstellung auf ein neues Material begegnete unerwarteten Schwierigkeiten.,3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M33,Linie3,Paul Schulz,Die Maschine hatte einen unregelmäßigen Produktionsfluss.,4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M34,Linie1,Miriam Braun,Ein hohes Maß an Effizienz wurde während der Schicht beobachtet.,1,-1,-1_effizienz_maschine_wurde_positiv
+Schicht3,M35,Linie2,Julia Stein,Die Maschine war während der Schicht oft überlastet.,2,-1,-1_effizienz_maschine_wurde_positiv
+Schicht3,M36,Linie3,Maximilian Huber,Die Rückmeldungen zur Qualität der Produkte waren insgesamt positiv.,4,-1,-1_effizienz_maschine_wurde_positiv
+Schicht1,M37,Linie1,Emma Braun,"Die Maschine zeigte unerwartete Störungen, die den Betrieb beeinträchtigten.",2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M38,Linie2,Karl Weber,Die Produktionsgeschwindigkeit war konstant hoch.,0,1,1_qualität_hoch_teile_ausschuss
+Schicht1,M39,Linie3,Nina Fischer,"Die Qualität war konsistent, das Team hat gute Arbeit geleistet.",5,1,1_qualität_hoch_teile_ausschuss
+Schicht2,M40,Linie1,Lukas Becker,Ein Materialengpass hat die Abläufe verlangsamt.,1,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M41,Linie2,Anna Krause,Ein Softwarefehler führte zu kurzen Stillständen.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M42,Linie3,Frank Huber,Die Maschine muss dringend gewartet werden.,2,-1,-1_effizienz_maschine_wurde_positiv
+Schicht3,M43,Linie1,Paul Bauer,Die Anpassungen haben die Effizienz verbessert.,1,-1,-1_effizienz_maschine_wurde_positiv
+Schicht3,M44,Linie2,Sophie Müller,Die Umstellung auf ein neues Verfahren verlief gut.,3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M45,Linie3,Lisa Neumann,"Die Rücklaufquote war höher als erwartet, Analyse erforderlich.",4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M46,Linie1,Klaus Schmidt,Eine gründliche Wartung hat den Betrieb stabilisiert.,2,-1,-1_effizienz_maschine_wurde_positiv
+Schicht1,M47,Linie2,Miriam Klein,Ein mechanisches Problem hat die Produktion gestört.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M48,Linie3,Tobias Huber,Die Fertigung war zeitweise ineffizient.,5,1,1_qualität_hoch_teile_ausschuss
+Schicht2,M49,Linie1,Sarah Braun,Die Fertigungsqualität war überdurchschnittlich.,0,1,1_qualität_hoch_teile_ausschuss
+Schicht2,M50,Linie2,Julia Becker,"Die Produktion verlief reibungslos, keine besonderen Anforderungen.",3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M51,Linie3,Maximilian Fischer,Es gab keinen nennenswerten Ausschuss.,1,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M52,Linie1,Lucas Schmidt,Die Produktionskran waren über dem Soll.,4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M53,Linie2,Frank Braun,Ein Defekt in der Software hat die Produktion kurzzeitig gestoppt.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M54,Linie3,Anna Neumann,"Die Mechanik war stabil, jedoch häufige Nachjustierungen notwendig.",2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M55,Linie1,Lukas Klein,"Die Maschine lief kontinuierlich, ohne Störungen.",3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M56,Linie2,Clara Huber,Ein unerwarteter Rückgang der Effizienz wurde festgestellt.,1,-1,-1_effizienz_maschine_wurde_positiv
+Schicht1,M57,Linie3,Karl Meyer,Die Maschine zeigte hohe Abnutzungspuren.,3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M58,Linie1,Sophie Meier,"Ein hoher Materialverbrauch wurde festgestellt, Grund unklar.",2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M59,Linie2,Maximilian Bauer,Die Umstellung auf neues Material erfordert zusätzliche Tests.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M60,Linie3,Lisa Schuster,"Die Prozessoptimierung war erfolgreich, Qualität stabil.",0,1,1_qualität_hoch_teile_ausschuss
+Schicht3,M61,Linie1,Noah Klein,Die Produktion wurde durch externe Faktoren beeinflusst.,3,-1,-1_effizienz_maschine_wurde_positiv
+Schicht3,M62,Linie2,Sarah Huber,"Die Nachjustierung war gelungen, kein Ausschuss.",4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M63,Linie3,Julia Fischer,Die Maschine erforderte unerwartete Wartung.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M64,Linie1,Frank Müller,Die Rückmeldungen der Mitarbeiter waren durchweg positiv.,4,-1,-1_effizienz_maschine_wurde_positiv
+Schicht1,M65,Linie2,Klaus Becker,"Die Maschine arbeitete effizient, gab jedoch Fehlermeldungen.",3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M66,Linie3,Sophie Klein,"Ein guter Produktionsfluss, keine nennenswerten Vorfälle.",4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M67,Linie1,Karl Neumann,"Störungen traten gelegentlich auf, jedoch nicht schwerwiegend.",3,-1,-1_effizienz_maschine_wurde_positiv
+Schicht2,M68,Linie2,Sabrina Huber,Erwartete Qualitätssteigerungen wurden erreicht.,1,-1,-1_effizienz_maschine_wurde_positiv
+Schicht2,M69,Linie3,Tobias Weber,Die Anpassungen an der Maschine waren erfolgreich.,1,-1,-1_effizienz_maschine_wurde_positiv
+Schicht3,M70,Linie1,Lucas Fischer,Ein plötzlicher Stillstand wurde schnell behoben.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M71,Linie2,Miriam Müller,Das Team leistete hervorragende Arbeit bei der Prozesskontrolle.,5,-1,-1_effizienz_maschine_wurde_positiv
+Schicht3,M72,Linie3,Maria Schmidt,Die Effizienz musste durch Anpassungen wiederhergestellt werden.,1,-1,-1_effizienz_maschine_wurde_positiv
+Schicht1,M73,Linie1,Anna Braun,Die Qualität der Teile war im Allgemeinen hoch.,0,1,1_qualität_hoch_teile_ausschuss
+Schicht1,M74,Linie2,Maximilian Keller,"Die Produzierbarkeit war variabel, durchschnittlich.",0,1,1_qualität_hoch_teile_ausschuss
+Schicht1,M75,Linie3,Karl Huber,Die Produktion war stark von der Maschinenleistung abhängig.,0,1,1_qualität_hoch_teile_ausschuss
+Schicht2,M76,Linie1,Julia Wagner,Ein langfristiges Software-Update könnte erforderlich sein.,2,-1,-1_effizienz_maschine_wurde_positiv
+Schicht2,M77,Linie2,Lucas Schmidt,Der Materialverbrauch lag über dem Zielwert.,0,1,1_qualität_hoch_teile_ausschuss
+Schicht2,M78,Linie3,Tobias Braun,"Der Ausschuss war minimal, die Qualität war hoch.",0,1,1_qualität_hoch_teile_ausschuss
+Schicht3,M79,Linie1,Emma Fischer,Die Maßnahmen zur Qualitätskontrolle waren erfolgreich.,4,1,1_qualität_hoch_teile_ausschuss
+Schicht3,M80,Linie2,Clara Huber,"Die Rückmeldungen waren gemischt, weitere Analysen notwendig.",4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M81,Linie3,Sarah Becker,"Der Maschinenpark verfügte über gute Wartung, sehr positiv.",3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M82,Linie1,Laura Klein,Die Schulungen waren hilfreich für den reibungslosen Ablauf.,4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M83,Linie2,Frank Neumann,Ein defektes Teil wurde umgehend ausgetauscht.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M84,Linie3,Anna Meyer,Die Maschine musste mehrmals angehalten werden.,2,-1,-1_effizienz_maschine_wurde_positiv
+Schicht2,M85,Linie1,Karl Müller,"Die Effizienz stieg, und die Qualität wurde gewahrt.",1,1,1_qualität_hoch_teile_ausschuss
+Schicht2,M86,Linie2,Jessica Neumann,"Der Ausschuss war unerwartet hoch, weitere Untersuchungen notwendig.",4,-1,-1_effizienz_maschine_wurde_positiv
+Schicht2,M87,Linie3,Miriam Becker,Die Überwachung der Prozesse verlief reibungslos.,3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M88,Linie1,Jonas Klein,Die Maschinenläufe waren konsistent und stabil.,5,-1,-1_effizienz_maschine_wurde_positiv
+Schicht3,M89,Linie2,Sophie Wagner,Ein plötzlicher Defekt verlangte nach sofortiger Intervention.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M90,Linie3,Lukas Meier,Die tägliche Produktion blieb konstant trotz kleinerer Probleme.,3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M91,Linie1,Max Fischer,Das Setup für die neue Linie verlief ohne Schwierigkeiten.,3,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M92,Linie2,Lisa Schmidt,Die Qualität der produzierten Teile ist vorbildlich.,0,1,1_qualität_hoch_teile_ausschuss
+Schicht1,M93,Linie3,Julia Klein,Ein langsamer Produktionsbeginn aufgrund technischer Anpassungen.,2,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M94,Linie1,Paul Becker,"Der Ausschuss war minimal, die Maschinenleistung hoch.",0,1,1_qualität_hoch_teile_ausschuss
+Schicht2,M95,Linie2,Karla Huber,Die Umstellung auf einen neuen Parametrierungsprozess war schwierig.,4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht2,M96,Linie3,Klaus Wagner,"Eine längere Anlaufphase war erforderlich, bevor die Produktion startete.",4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht3,M97,Linie1,Emma Klein,Herausforderungen in der Effizienz wurden erkannt und adressiert.,1,1,1_qualität_hoch_teile_ausschuss
+Schicht3,M98,Linie2,Lukas Müller,Die Maschine lief während der Schicht ohne Probleme.,2,-1,-1_effizienz_maschine_wurde_positiv
+Schicht3,M99,Linie3,Henri Meyer,Die laufende Produktion war eine positive Erfahrung.,4,0,0_produktion_maschine_aufgrund_umstellung
+Schicht1,M100,Linie1,Maximilian Schuster,Die Maschine zeigte stabile Betriebsbedingungen.,3,0,0_produktion_maschine_aufgrund_umstellung

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Documents\Semester_5\Studienarbeit\clustering_GBERT_FT_GPU.py", line 131, in <module>
+    model.fit(dataset, epochs=EPOCHS, callbacks=callbacks)
+  File "C:\Users\Lenovo\Documents\Semester_5\Studienarbeit\my_venv\Lib\site-packages\transformers\modeling_tf_utils.py", line 1229, in fit
+    return super().fit(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Documents\Semester_5\Studienarbeit\my_venv\Lib\site-packages\tf_keras\src\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\Lenovo\Documents\Semester_5\Studienarbeit\my_venv\Lib\site-packages\tf_keras\src\callbacks.py", line 245, in <genexpr>
+    if cb._implements_train_batch_hooks()
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ModelCheckpoint' object has no attribute '_implements_train_batch_hooks'

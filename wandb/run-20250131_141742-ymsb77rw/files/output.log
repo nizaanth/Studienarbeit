@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Documents\Semester_5\Studienarbeit\clustering_GBERT_FT_GPU.py", line 131, in <module>
+    model.fit(dataset, epochs=EPOCHS, callbacks=callbacks)
+                                                ^^^^^^^^^
+NameError: name 'callbacks' is not defined
